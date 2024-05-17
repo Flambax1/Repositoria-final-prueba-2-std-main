@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>GEAR UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-custom">
+    <a class="navbar-brand" href="index.html"><img src="assets/images/Logo/logo.png" alt=""
+            style="max-width: 50px; max-height: 50px;"></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Productos.html">Productos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="juegos.html">juegos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Nosotros.html">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Asistencia.html">Asistencia</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Ubicacion.html">Ubicacion</a>
+            </li>
+        </ul>
+
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="sign up.html"><span class="glyphicon glyphicon-user"></span>
+                    Registrarse</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html"><span class="glyphicon glyphicon-log-in"></span>Iniciar
+                    sesion</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+<div class="games-container container mt-4" id="games"></div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Mensaje</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ¡Agregado exitosamente!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incluir jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Incluir Popper.js y Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        const settings = {
+            async: true,
+            crossDomain: true,
+            url: 'https://cheapshark-game-deals.p.rapidapi.com/deals?lowerPrice=0&steamRating=0&title=batman&desc=0&output=json&steamworks=0&sortBy=Deal%20Rating&AAA=0&pageSize=60&exact=0&upperPrice=50&pageNumber=0&onSale=0&metacritic=0&storeID%5B0%5D=1%2C2%2C3',
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '939e749752mshba4c566d99bcd8dp165100jsnbc019369a633',
+                'X-RapidAPI-Host': 'cheapshark-game-deals.p.rapidapi.com'
+            }
+        };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response); // Verifica que recibes la respuesta correcta
+            displayGames(response);
+        });
+
+        function displayGames(games) {
+            const gamesContainer = document.getElementById('games');
+            games.forEach(game => {
+                const gameElement = document.createElement('div');
+                gameElement.classList.add('game-card', 'col-md-4', 'mb-4');
+                gameElement.innerHTML = `
+                    <div class="card h-100">
+                        <img class="card-img-top" src="${game.thumb}" alt="${game.title}">
+                        <div class="card-body">
+                            <h5 class="card-title">${game.title}</h5>
+                            <p class="card-text">Precio: $${game.normalPrice}</p>
+                            <p class="card-text">Stock: ${game.isOnSale}</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <button class="btn btn-dark add-to-cart">Añadir al carro</button>
+                        </div>
+                    </div>
+                `;
+                gamesContainer.appendChild(gameElement);
+            });
+
+            // Añadir evento de clic a todos los botones "Añadir al carro"
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    $('#successModal').modal('show');
+                });
+            });
+        }
+    </script>
+
+</body>
+
+</html>

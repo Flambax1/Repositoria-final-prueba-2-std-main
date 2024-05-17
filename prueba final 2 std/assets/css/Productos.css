@@ -1,0 +1,130 @@
+.navbar .nav-link,
+.navbar-brand {
+    color: #e4e2e0 !important;
+}
+
+body {
+    background-color: rgb(219, 219, 219) !important;
+    font-family: 'Arial', sans-serif;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-family: 'Arial', sans-serif;
+    color: #260d33cc;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.navbar.bg-custom {
+    background-color: #141414; 
+
+}
+
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fila {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tarjeta {
+    width: calc(50% - 20px); /* Establece el ancho para que haya 2 tarjetas por fila */
+    margin: 10px;
+    border: 1px solid #ccc; /* Agrega un borde para visualizar el límite de la tarjeta */
+}
+
+.tarjeta img {
+    max-width: 100%; /* Establece un ancho máximo del 100% del contenedor */
+    height: auto; /* Establece la altura automática para mantener la proporción */
+    display: block; /* Asegura que la imagen se muestre como bloque para manejar correctamente el tamaño */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde del contenedor */
+}
+
+/* Media query para ajustar el ancho de las tarjetas para que haya 3 tarjetas por fila en pantallas más grandes */
+@media (min-width: 768px) {
+    .tarjeta {
+        width: calc(33.33% - 20px); /* Establece el ancho para que haya 3 tarjetas por fila */
+    }
+}
+
+
+
+.tarjeta {
+    width: 300px;
+    height: 300px;
+    /* Ajuste del tamaño de la tarjeta para acomodar la imagen más grande */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen {
+    width: 90%;
+    /* Ajuste del tamaño de la imagen */
+    height: 70%;
+    /* Ajuste del tamaño de la imagen */
+    background-color: #ccc;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.contenido {
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: 10px;
+    /* Agrega un poco de espacio entre el texto y el botón */
+}
+
+.boton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #0056b3;
+}

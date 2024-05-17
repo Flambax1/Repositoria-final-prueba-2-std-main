@@ -1,0 +1,242 @@
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.navbar .nav-link, .navbar-brand  {
+    color: #e4e2e0 !important;
+}
+
+body {
+    background-color: rgb(219, 219, 219) !important;
+    
+	font-family: 'Arial', sans-serif;
+}
+
+ 
+.text-center{
+
+    padding: 15px;
+
+}
+
+
+
+a {
+    color: #007bff;
+}
+
+
+h1, h2, h3, h4, h5, h6,p {
+    font-family: 'Arial', sans-serif;
+	color: #260d33cc;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/*  imagen */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* navegación */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* interacción */
+
+input[type="text"], input[type="email"], input[type="password"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#carouselExampleControls {
+	margin-top: 30px;
+    border-radius: 10px ;
+    padding: 5px;
+    
+}
+
+
+.navbar.bg-custom {
+    background-color: #141414; 
+	
+}
+
+
+
+
+.registration-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.registration-form {
+    background-color: #312a30; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.registration-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color:#ffffff;
+}
+
+.registration-form .form-group {
+    margin-bottom: 15px;
+}
+
+.registration-form label {
+    display: block;
+    margin-bottom: 5px;
+    color:#ffffff;
+}
+
+.registration-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.registration-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.registration-form button:hover {
+    background-color: #218838;
+}
+.error-message {
+    color: rgb(201, 43, 43);
+}
+
+
+
+  /* Agrega un poco de espacio arriba de las cards */
+  .card-container-wrapper {
+    position: relative;
+    
+  }
+  
+  /* Agrega un poco de espacio arriba de las cards */
+  #card-container {
+    margin-top: 20px;
+    
+  }
+  
+  /* Estilos para las flechas */
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1;
+  }
+  
+  .left-arrow {
+    left: 0;
+  }
+  
+  .right-arrow {
+    right: 0;
+  }
+
+/* Estilos para las card */
+.card {
+    margin-bottom: 30px;
+    
+}
+.card-img-top {
+    height: 250px; /* Ajustar la altura de la imagen */
+    object-fit: cover;
+    
+}
+
+/* Estilos juego */
+.games-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.game-card {
+    max-width: 300px;
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-footer {
+    background-color: #f8f9fa;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.custom-container {
+    text-align: center;
+    max-width: 800px; /* Establece un ancho máximo para el contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 0 20px; /* Agrega un poco de espacio alrededor del contenido */
+}
+
+.custom-container img {
+    margin-bottom: 20px; /* Ajusta este valor según sea necesario para el espacio deseado */
+    max-width: 100%; /* La imagen se ajustará al ancho del contenedor */
+    height: auto; /* La altura de la imagen se ajustará automáticamente */
+}
+
+/* Media query para pantallas más pequeñas */
+@media screen and (max-width: 600px) {
+    .custom-container {
+        padding: 0 10px; /* Reduce el espacio alrededor del contenido en pantallas pequeñas */
+    }
+}
+.custom-img-hover {
+    transition: transform 0.3s ease;
+}
+
+.custom-img-hover:hover {
+    transform: scale(1.1); /* Cambia el tamaño al 110% al pasar el mouse */
+}
